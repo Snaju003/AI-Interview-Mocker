@@ -28,18 +28,18 @@ const Footer = () => {
 							/>
 						</div>
 						<div className="hidden sm:block">
-							<h1 className="text-xl font-bold text-blue-600 group-hover:text-blue-800 transition-colors">
+							<h1 className="text-xl font-bold text-black group-hover:text-blue-600 transition-colors">
 								InterviewAI
 							</h1>
 						</div>
 					</Link>
 
 					{/* Contact */}
-					<div className="flex items-center gap-2 text-blue-600">
-						<Mail className="w-4 h-4" />
+					<div className="flex items-center gap-3 text-gray-700 bg-gray-50 px-4 py-2 rounded-lg hover:bg-blue-50 transition-all duration-200 group">
+						<Mail className="w-5 h-5 text-blue-500 group-hover:text-blue-600 transition-colors" />
 						<a
 							href="mailto:soumyaraj2003@gmail.com"
-							className="hover:text-blue-800 transition-colors">
+							className="font-medium hover:text-blue-600 transition-colors duration-200">
 							Contact Me
 						</a>
 					</div>
