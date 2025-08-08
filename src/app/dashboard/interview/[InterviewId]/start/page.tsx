@@ -34,7 +34,7 @@ const Start = () => {
 				throw new Error("Failed to fetch interview details");
 			const data = await response.json();
 			setData(data);
-			console.log("Interview Details:", data);
+			// console.log("Interview Details:", data);
 		} catch (error) {
 			console.error("Error fetching interview details:", error);
 		} finally {

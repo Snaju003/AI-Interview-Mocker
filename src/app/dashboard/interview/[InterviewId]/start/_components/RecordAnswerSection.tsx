@@ -140,7 +140,7 @@ const RecordAnswerSectionClient = ({
 			const data = await res.json();
 			if (!res.ok) throw new Error(data.error || "Feedback error");
 
-			console.log("✅ Feedback:", data);
+			// console.log("✅ Feedback:", data);
 			toast.success(
 				"Feedback received! You can now proceed to the next question."
 			);

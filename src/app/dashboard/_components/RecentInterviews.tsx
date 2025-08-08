@@ -30,7 +30,7 @@ const RecentInterviews = () => {
 				)
 			)
 			.orderBy(desc(MockInterview.createdAt));
-		console.log("Fetched Interviews:", result);
+		// console.log("Fetched Interviews:", result);
 		setInterviews(result);
 	};
 
