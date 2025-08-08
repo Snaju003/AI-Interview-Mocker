@@ -1,14 +1,15 @@
 import { InterviewAnswer } from "@/db/schema";
 import { db } from "@/index";
 import { eq } from "drizzle-orm";
-import { NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 
 export async function GET(
-	req: Request,
-	{ params }: { params: { interviewId: string } }
+	req: NextRequest,
+	{ params }: { params: Promise<{ interviewId: string }> } // type-safe with async params
 ) {
 	try {
-		const { interviewId } = params;
+		// Await the params (Next.js 14+ async params support)
+		const { interviewId } = await params;
 
 		if (!interviewId) {
 			return NextResponse.json(
@@ -35,7 +36,7 @@ export async function GET(
 			);
 		}
 
-		return NextResponse.json({ feedback: feedbackData });
+		return NextResponse.json({ feedback: feedbackData }, { status: 200 });
 	} catch (error) {
 		console.error("Error fetching feedback:", error);
 		return NextResponse.json(
